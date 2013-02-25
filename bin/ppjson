@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'escort'
+require 'ppjson'
+
+Escort::App.create do |app|
+  app.version Ppjson::VERSION
+
+  app.requires_arguments
+
+  app.action do |options, arguments|
+    Ppson::Commands::PrettyPrintJson.new(options, arguments).execute
+  end
+end
