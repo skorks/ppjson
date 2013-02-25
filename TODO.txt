@@ -1,0 +1,5 @@
+- write a decent readme
+- stop using an unreleased escort that points at filesystem
+- try it out when installing at the top level
+- try it out with binstubs in another project
+- think about if it needs any arguments at all
