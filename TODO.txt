@@ -3,3 +3,7 @@
 - try it out when installing at the top level
 - try it out with binstubs in another project
 - think about if it needs any arguments at all
+
+- ppjson --file - to read json from a file, format it and spit it out to STDOUT
+- ppjson --file --inline - to read json from a file, format it and overwrite the file with it
+- ppjson --file --backwards - take json from file which is presumably pretty already and unprettify it
