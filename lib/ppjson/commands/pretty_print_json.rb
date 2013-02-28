@@ -1,7 +1,90 @@
 module Ppson
   module Commands
     class PrettyPrintJson < ::Escort::ActionCommand::Base
+      class ArgumentsFactory
+        class << self
+          def create(options, arguments)
+            if options[:file]
+              FileArguments.new(options, arguments)
+            else
+              JsonStringArguments.new(options, arguments)
+            end
+          end
+        end
+      end
+
+      class JsonStringArguments
+        attr_reader :options, :arguments
+
+        def initialize(options, arguments)
+          @options = options
+          @arguments = arguments
+        end
+
+        def each(&block)
+          arguments.each do |argument|
+            block.call(argument)
+          end
+        end
+      end
+
+      class FileArguments
+        attr_reader :options, :arguments
+
+        def initialize(options, arguments)
+          @options = options
+          @arguments = arguments
+        end
+      end
+
+      class FileArgument
+        attr_reader :filepath, :options
+
+        def initialize(filepath, options = {})
+          @filepath = filepath
+          @options = options
+        end
+
+        def process
+          #read file contents
+          #use inline option to decide if stream is stdout or file
+          #produce a jsonstring argument with
+          #inline and undo need to be considered
+        end
+
+        private
+
+        def output_stream
+          if options[:inline]
+            File.open(filepath, "w")
+          else
+            $stdout
+          end
+        end
+      end
+
+      #class JsonString
+        #attr_reader :value, :pretty
+
+        #def initialize(value, pretty = true)
+          #@value = value
+          #@pretty = pretty
+        #end
+
+        #def process
+          #Ppjson::StreamJsonWriter.write(value, :pretty => pretty)
+        #end
+      #end
+
       def execute
+        ArgumentsFactory.create(command_options).each do |argument|
+          argument.process
+          #Ppjson::StreamJsonWriter.write(argument, :pretty => true)
+        end
+        #ArgumentsFactory.create(command_options).each do |argument|
+          #Ppjson::StreamJsonWriter.write(argument, :pretty => true)
+        #end
+
         if command_options[:file] && command_options[:inline] && command_options[:undo]
           unpretty_print_json_strings_back_to_file
         elsif command_options[:file] && command_options[:inline]
