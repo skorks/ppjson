@@ -18,12 +18,6 @@ Escort::App.create do |app|
   end
 
   app.action do |options, arguments|
-    #Ppson::Commands::PrettyPrintJson.new(options, arguments) do |action|
-      #action.when(:file) { action.file }
-      #action.when(:file, :inline) { action.file_and_inline }
-      #action.when(:file, :inline, :undo) { action.file_inline_and_undo }
-      #action.when(:file, :undo) { action.file_and_undo }
-    #end.execute
     Ppson::Commands::PrettyPrintJson.new(options, arguments).execute
   end
 end
