@@ -1,8 +1,12 @@
 - write a decent readme
-- stop using an unreleased escort that points at filesystem    DONE
-- try it out when installing at the top level                  DONE
+- stop using an unreleased escort that points at filesystem                      DONE
+- try it out when installing at the top level                                    DONE
+- add a summary and description                                                  DONE
+
 - try it out with binstubs in another project
-- think about if it needs any arguments at all
+- needs depends_on support in order to model one way dependencies
+- ability to specify a different command based on options declaratively or
+a convention for how to do different things for the same action based on options
 
 - ppjson --file - to read json from a file, format it and spit it out to STDOUT
 - ppjson --file --inline - to read json from a file, format it and overwrite the file with it

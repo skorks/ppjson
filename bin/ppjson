@@ -6,9 +6,24 @@ require 'ppjson'
 Escort::App.create do |app|
   app.version Ppjson::VERSION
 
+  app.summary "Pretty print JSON on the command-line"
+  app.description "Pretty print JSON strings by piping or passing them as arguments. It will preserve the ordering of your keys."
+
   app.requires_arguments
 
+  app.options do |opts|
+    opts.opt :file, "Read the JSON from a file", :short => '-f', :long => '--file', :type => :boolean, :default => false
+    opts.opt :inline, "Overwrite the file with the pretty JSON (only make sense with the --file option)", :short => '-i', :long => '--inline', :type => :boolean, :default => false, :depends_on => [:file]
+    opts.opt :undo, "Take pretty printed JSON from file and unprettify it (only make sense with the --file option)", :short => '-u', :long => '--undo', :type => :boolean, :default => false, :depends_on => [:file]
+  end
+
   app.action do |options, arguments|
+    #Ppson::Commands::PrettyPrintJson.new(options, arguments) do |action|
+      #action.when(:file) { action.file }
+      #action.when(:file, :inline) { action.file_and_inline }
+      #action.when(:file, :inline, :undo) { action.file_inline_and_undo }
+      #action.when(:file, :undo) { action.file_and_undo }
+    #end.execute
     Ppson::Commands::PrettyPrintJson.new(options, arguments).execute
   end
 end
