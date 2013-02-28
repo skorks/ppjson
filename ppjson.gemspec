@@ -8,9 +8,10 @@ Gem::Specification.new do |gem|
   gem.version       = Ppjson::VERSION
   gem.authors       = ["Alan Skorkin"]
   gem.email         = ["alan@skorks.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.summary       = %q{Pretty print JSON on the command-line}
+  gem.description   = %q{Pretty print JSON strings by piping or passing them as arguments, without reordering your keys}
+  gem.homepage      = "https://github.com/skorks/ppjson"
+
 
   gem.add_runtime_dependency('escort')
   gem.add_runtime_dependency('yajl-ruby')
