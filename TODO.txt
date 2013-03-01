@@ -1,21 +1,26 @@
+ROADMAP
+
+v1.0.0
+- do a bunch of specs
+- do an integration test if can figure out a nice way of doing that
+- try it out with binstubs in another project
+- up the version of escort to one with depends support
+- do the dependencies between options
+- up the version
+- update readme
+- release
+
+
+- blog about the current design to handle the different options interacting in different ways nicely
+
+
+DONE
 - stop using an unreleased escort that points at filesystem                      DONE
 - try it out when installing at the top level                                    DONE
 - add a summary and description                                                  DONE
 - ppjson --file - to read json from a file, format it and spit it out to STDOUT                         DONE
 - ppjson --file --inline - to read json from a file, format it and overwrite the file with it           DONE
 - ppjson --file --backwards - take json from file which is presumably pretty already and unprettify it  DONE
-
-
-- write a decent readme             DONE
-- do a bunch of specs
-- do an integration test if can figure out a nice way of doing that
-- try it out with binstubs in another project
-- up the version
-- release
-- blog about the current design to handle the different options interacting in different ways nicely
-
-- up the version of escort to one with depends support
-- do the dependencies between options
-- up the version
-- update readme
-- release
+- write a decent readme            DONE
+- up the version                   DONE
+- release                          DONE
