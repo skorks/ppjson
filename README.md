@@ -24,13 +24,13 @@ Pretty printing your JSON on the command line has never been easier:
 ppjson '{"a":"b"}'
 ```
 
-If another command returns some json for you:
+If another command returns some JSON for you:
 
 ```
 curl http://mydomain.com/blah.json | ppjson
 ```
 
-Do you have some json in a file? See a pretty printed version of it:
+Do you have some JSON in a file? See a pretty printed version of it:
 
 ```
 ppjson -f my_file.json
@@ -42,7 +42,7 @@ Or maybe you want to pretty print the contents of the file and then update the f
 ppjson -f -i my_file.json
 ```
 
-Perhaps you already have some pretty printed json in a file, but you want to pass it as an argument to some other command, so you need to un-pretty print it:
+Perhaps you already have some pretty printed JSON in a file, but you want to pass it as an argument to some other command, so you need to un-pretty print it:
 
 ```
 ppjson -f -u my_file.json
