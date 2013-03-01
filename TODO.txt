@@ -6,7 +6,7 @@
 - ppjson --file --backwards - take json from file which is presumably pretty already and unprettify it  DONE
 
 
-- write a decent readme
+- write a decent readme             DONE
 - do a bunch of specs
 - do an integration test if can figure out a nice way of doing that
 - try it out with binstubs in another project
@@ -19,7 +19,3 @@
 - up the version
 - update readme
 - release
-
-
-- ability to specify a different command based on options declaratively or a convention for how to do different things for the same action based on options (bunch of options that are flags, options that are a clump of values etc)
-
