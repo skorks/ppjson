@@ -13,8 +13,8 @@ Escort::App.create do |app|
 
   app.options do |opts|
     opts.opt :file, "Read the JSON from a file", :short => '-f', :long => '--file', :type => :boolean, :default => false
-    opts.opt :inline, "Overwrite the file with the pretty JSON (only make sense with the --file option)", :short => '-i', :long => '--inline', :type => :boolean, :default => false, :depends_on => [:file]
-    opts.opt :undo, "Take pretty printed JSON from file and unprettify it (only make sense with the --file option)", :short => '-u', :long => '--undo', :type => :boolean, :default => false, :depends_on => [:file]
+    opts.opt :inline, "Overwrite the file with the pretty JSON", :short => '-i', :long => '--inline', :type => :boolean, :default => false, :depends_on => [:file]
+    opts.opt :undo, "Take pretty printed JSON from file and unprettify it", :short => '-u', :long => '--undo', :type => :boolean, :default => false, :depends_on => [:file]
   end
 
   app.action do |options, arguments|
